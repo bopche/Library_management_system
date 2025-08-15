@@ -58,16 +58,17 @@ def  View_available_books_with_status(library):
 def borrow_a_book(library):
     name = input("Enter the name of the book you want to borrow : ").lower()
 
-    if name not in library:
-        print("Book not found")
-        return
-    if not library[name].get("available",False):
-        print("Sorry this book is already Borrowed.")
-        return
-    else:
-        print("You have sucessfully borrwed a book")
-        library[name]["available"] = False
-        save_data(library)
+    for title in library:
+        if title.lower() == name:
+            if not  library[name]["available"]:
+                print("Sorry...this book is already borrowed.")
+                return
+            library[name]["available"] = False
+            save_data(library)
+            print(f"You borrowed {name}")
+            return
+    print("Book not Found")
+
 
 def return_a_book(library):
     name = input("Enter the name of the book you want to return : ")

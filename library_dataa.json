@@ -1,0 +1,18 @@
+{
+  "Harry Potter": {
+    "author": "J.K. Rowling",
+    "available": true
+  },
+  "Atomic Habits": {
+    "author": "James Clear",
+    "available": true
+  },
+  "The Alchemist": {
+    "author": "Paulo Coelho",
+    "available": true
+  },
+  "Iron man": {
+    "author": "Tony Stark",
+    "available": true
+  }
+}
