@@ -56,7 +56,7 @@ def  View_available_books_with_status(library):
         print(f"-{book} by {info.get('author')} [{status}]")
 
 def borrow_a_book(library):
-    name = input("Enter the name of the book you want to borrow : ").lower()
+    name = input("Enter the name of the book you want to borrow : ").strip().lower()
 
     for title in library:
         if title.lower() == name:
@@ -67,18 +67,18 @@ def borrow_a_book(library):
             save_data(library)
             print(f"You borrowed {name}")
             return
-    print("Book not Found")
+    print("Book not found.")
 
 
 def return_a_book(library):
-    name = input("Enter the name of the book you want to return : ")
-    if name not in library:
-        print("Book Not Found!")
-        return
-    if name in library:
-        print("The book has sucessfully returned")
-        library[name]["available"] = True
-    save_data(library)
+    name = input("Enter the name of the book you want to return : ").strip().lower()
+    for title in library:
+        if title.lower() ==name:
+            library[name]["available"] = True
+            save_data(library)
+            print(f"You returned {name}")
+            return
+    print("Book not found.")
 
 
 def search_a_book(library):
