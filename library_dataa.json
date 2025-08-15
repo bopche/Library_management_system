@@ -5,14 +5,10 @@
   },
   "Atomic Habits": {
     "author": "James Clear",
-    "available": true
+    "available": false
   },
   "The Alchemist": {
     "author": "Paulo Coelho",
-    "available": true
-  },
-  "Iron man": {
-    "author": "Tony Stark",
     "available": true
   }
 }

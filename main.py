@@ -60,12 +60,12 @@ def borrow_a_book(library):
 
     for title in library:
         if title.lower() == name:
-            if not  library[name]["available"]:
+            if not  library[title]["available"]:
                 print("Sorry...this book is already borrowed.")
                 return
-            library[name]["available"] = False
+            library[title]["available"] = False
             save_data(library)
-            print(f"You borrowed {name}")
+            print(f"You borrowed {title}")
             return
     print("Book not found.")
 
@@ -74,7 +74,7 @@ def return_a_book(library):
     name = input("Enter the name of the book you want to return : ").strip().lower()
     for title in library:
         if title.lower() ==name:
-            library[name]["available"] = True
+            library[title]["available"] = True
             save_data(library)
             print(f"You returned {name}")
             return
